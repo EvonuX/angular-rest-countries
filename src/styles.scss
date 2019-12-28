@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 1rem 2rem;
+}
+
+select,
+input {
+  border: none;
+}
+
+.light {
+  background: $light;
+  min-height: 100vh;
+
+  h1,
+  h2,
+  h3,
+  p,
+  button,
+  input,
+  select {
+    color: $lightText;
+  }
+
+  .countryCard,
+  select,
+  input {
+    background: $lightBg;
+  }
+
+  select,
+  input {
+    &::placeholder {
+      color: $lightText;
+    }
+    box-shadow: 0 0 0.5rem 0.3rem $lightBg;
+  }
+}
+
+.dark {
+  background: $dark;
+  min-height: 100vh;
+
+  h1,
+  h2,
+  h3,
+  p,
+  button,
+  input,
+  select {
+    color: $darkText;
+  }
+
+  .countryCard,
+  select,
+  input {
+    background: $darkBg;
+  }
+
+  select,
+  input {
+    &::placeholder {
+      color: $darkText;
+    }
+    box-shadow: 0 0 0.5rem 0.3rem $darkBg;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="country">
+  <button type="button" [routerLink]="[ '/' ]">&larr; Back</button>
+  <div class="countryDetails" *ngIf="!loading">
+    <div class="leftSide">
+      <img [src]="country.flag" [alt]="country.name">
+    </div>
+    <div class="rightSide">
+      <h1>{{ country.name }}</h1>
+      <div class="rightSide__wrapper">
+        <p><strong>Native Name:</strong> {{ country.nativeName }}</p>
+        <p><strong>Population:</strong> {{ country.population }}</p>
+        <p><strong>Region:</strong> {{ country.region }}</p>
+        <p><strong>Sub Region:</strong> {{ country.nativeName }}</p>
+        <p><strong>Capital:</strong> {{ country.capital }}</p>
+        <p><strong>Top Level Domain:</strong> {{ country.topLevelDomain[0] }}</p>
+        <p><strong>Currencies:</strong> {{ country.currencies[0].name }}</p>
+        <p><strong>Languages:</strong>
+          <span *ngFor="let language of country.languages"> {{ language.name }}</span>
+        </p>
+      </div>
+      <p><strong>Border Countries:</strong> <span class="chip"> Test</span></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.home {
+  min-height: 100vh;
+
+  &__utils {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    input,
+    select {
+      width: 30rem;
+      padding: 1rem;
+    }
+  }
+
+  &__countries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+  }
+}
