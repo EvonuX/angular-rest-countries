@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
+    this.loading = true;
     this.getCountries();
   }
 
   getCountries() {
-    this.loading = true;
     this.api.getCountries().subscribe(res => {
       this.countries = res;
       this.loading = false;

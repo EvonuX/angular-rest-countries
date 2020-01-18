@@ -1,6 +1,9 @@
 <header>
   <div class="container">
     <h1 [routerLink]="['/']">Where in the world?</h1>
-    <button (click)="toggleMode()" type="button">{{ colorMode === 'light' ? 'Dark' : 'Light' }} Mode</button>
+    <button class="with-icon" (click)="toggleMode()" type="button">
+      <span [ngClass]="{'ion ion-md-moon': colorMode=='light', 'ion ion-md-sunny':colorMode=='dark' }"></span>
+      {{ colorMode === 'light' ? 'Dark' : 'Light' }} Mode
+    </button>
   </div>
 </header>

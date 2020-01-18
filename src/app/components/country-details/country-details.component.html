@@ -1,5 +1,8 @@
-<div class="country">
-  <button type="button" [routerLink]="[ '/' ]">&larr; Back</button>
+<div *ngIf="!loading" class="country">
+  <button class="with-icon" type="button" [routerLink]="[ '/' ]">
+    <span class="ion ion-md-arrow-back"></span>
+    Back
+  </button>
   <div class="countryDetails" *ngIf="!loading">
     <div class="leftSide">
       <img [src]="country.flag" [alt]="country.name">
@@ -18,7 +21,16 @@
           <span *ngFor="let language of country.languages"> {{ language.name }}</span>
         </p>
       </div>
-      <p><strong>Border Countries:</strong> <span class="chip"> Test</span></p>
+      <p *ngIf="country.borders.length" class="rightSide__borders"><strong>Border Countries:</strong>
+        <span *ngFor="let country of country.borders" (click)="getCountry()" [routerLink]="[ '/country/', country ]"
+          class="chip">
+          {{ country }}
+        </span>
+      </p>
     </div>
   </div>
+</div>
+
+<div *ngIf="loading" class="loading">
+  <span class="ion ion-md-refresh"></span>
 </div>

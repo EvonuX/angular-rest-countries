@@ -14,7 +14,7 @@ export class ApiService {
   }
 
   getCountry(id) {
-    return this.api.get(`${this.apiUrl}/callingcode/${id}`);
+    return this.api.get(`${this.apiUrl}/alpha?codes=${id}`);
   }
 
   getRegionCountries(region) {

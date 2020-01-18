@@ -1,8 +1,12 @@
-<div class="home">
+<div class="home" *ngIf="!loading">
 
   <div class="home__utils">
-    <input placeholder="Search for a country..." [(ngModel)]="search" (keyup)="searchTerm()" type="text" name="search"
-      id="search" />
+    <div class="home__utils--search">
+      <span class="ion ion-md-search"></span>
+      <input placeholder="Search for a country..." [(ngModel)]="search" (keyup)="searchTerm()" type="text" name="search"
+        id="search" />
+
+    </div>
 
     <select (change)="getRegionCountries($event)" name="region" id="region">
       <option selected disabled>Filter by Region</option>
@@ -12,7 +16,11 @@
 
   <div class="home__countries">
     <app-country *ngFor="let country of countries" [country]="country"
-      [routerLink]="[ '/country/', country.callingCodes[0] ]"></app-country>
+      [routerLink]="[ '/country/', country.alpha3Code ]"></app-country>
   </div>
 
+</div>
+
+<div *ngIf="loading" class="loading">
+  <span class="ion ion-md-refresh"></span>
 </div>
