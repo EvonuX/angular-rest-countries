@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./country-details.component.scss"]
 })
 export class CountryDetailsComponent implements OnInit, OnDestroy {
-  country: {};
+  country: any;
   loading: boolean = false;
   component: any;
 
